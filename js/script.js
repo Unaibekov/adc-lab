@@ -31,15 +31,16 @@ $( () => {
     $('.menu-button').click(function(){
         $('.nav').addClass('is-active');
         $('.menu-close').addClass('is-active');
-        $('body').css('overflow','hidden');
+        // $('body').css('overflow','hidden');
     });
     $('.menu-close').click(function(){
         $('.nav').removeClass('is-active');
         $('.menu-close').removeClass('is-active');
-        $('body').css('overflow','auto');
+        // $('body').css('overflow','auto');
     });
 
     const menu = document.querySelector('.nav');
+    const body = document.querySelector('body')
     const linksClose = document.querySelectorAll('.link');
     linksClose.forEach(linkClose => {
         linkClose.addEventListener('click', () => {
@@ -47,12 +48,31 @@ $( () => {
         });
     });
 
+
     $('.variable-width').slick({
-        arrows: true,
-        dots: false,
-        // centerMode: true,
-        focusOnSelect: true,
-        variableWidth: true
+        centerMode: true,
+        centerPadding: '60px',
+        slidesToShow: 3,
+        responsive: [
+          {
+            breakpoint: 768,
+            settings: {
+              arrows: false,
+              centerMode: true,
+              centerPadding: '40px',
+              slidesToShow: 3
+            }
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              arrows: false,
+              centerMode: true,
+              centerPadding: '40px',
+              slidesToShow: 1
+            }
+          }
+        ]
       });
 
     // fancybox customisation
