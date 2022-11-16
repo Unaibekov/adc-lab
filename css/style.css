@@ -2,6 +2,21 @@
 @import url("slider.css");
 
 
+
+.theme {
+    position: absolute;
+    top: 120px;
+    left: 20px;
+    cursor: pointer;
+}
+
+.theme button {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+
 * {
     box-sizing: border-box;
 }
