@@ -31,23 +31,19 @@ $( () => {
     $('.menu-button').click(function(){
         $('.nav').addClass('is-active');
         $('.menu-close').addClass('is-active');
-        // $('body').css('overflow','hidden');
     });
     $('.menu-close').click(function(){
         $('.nav').removeClass('is-active');
         $('.menu-close').removeClass('is-active');
-        // $('body').css('overflow','auto');
     });
 
     const menu = document.querySelector('.nav');
-    const body = document.querySelector('body')
     const linksClose = document.querySelectorAll('.link');
     linksClose.forEach(linkClose => {
         linkClose.addEventListener('click', () => {
             menu.classList.remove('is-active');
         });
     });
-
 
     $('.variable-width').slick({
         centerMode: true,
